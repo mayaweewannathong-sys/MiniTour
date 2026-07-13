@@ -10,7 +10,7 @@ locations = [
         "lat": 18.818615919415542,
         "lon": 98.89227498790338,
         "description": "ปูชนียสถานคู่บ้านคู่เมืองเชียงใหม่ ตั้งตระหง่านบนดอยสูง จุดชมวิวเมืองเชียงใหม่แบบพาโนรามาที่สวยงามที่สุด",
-        "image_url": "https://images.unsplash.com/photo-1574886617066-879796e95c1c?auto=format&fit=crop&q=80&w=800",
+        "image_url": "https://blog.bangkokair.com/wp-content/uploads/2025/10/Cover_wat-phra-that-doi-suthep-travel-guide.jpg",
         "gmaps_url": "https://www.google.com/maps/dir/?api=1&destination=18.818615919415542,98.89227498790338"
     },
     {
@@ -18,7 +18,7 @@ locations = [
         "lat": 18.788534672245962,
         "lon": 98.99266598551255,
         "description": "แลนด์มาร์กประวัติศาสตร์ จุดถ่ายรูปยอดฮิตกับกำแพงอิฐสีส้มเก่าแก่และลานกว้างที่เป็นหัวใจของเมือง",
-        "image_url": "https://images.unsplash.com/photo-1619888941706-0b1a0391d4e0?auto=format&fit=crop&q=80&w=800",
+        "image_url": "https://ik.imagekit.io/tvlk/blog/2025/05/Desktop-22.jpg?tr=q-70,c-at_max,w-500,h-250,dpr-2",
         "gmaps_url": "https://www.google.com/maps/dir/?api=1&destination=18.788534672245962,98.99266598551255"
     },
     {
@@ -26,7 +26,7 @@ locations = [
         "lat": 18.761899053964935,
         "lon": 98.91836751432969,
         "description": "วัดเก่าแก่อายุกว่าพันปี โด่งดังเรื่ององค์หลวงพ่อทันใจและสถาปัตยกรรมล้านนาที่วิจิตรงดงาม",
-        "image_url": "https://images.unsplash.com/photo-1596773347146-248dbfa0b9be?auto=format&fit=crop&q=80&w=800",
+        "image_url": "https://ik.imagekit.io/tvlk/blog/2025/05/shutterstock_2143098185-1024x683.jpg?tr=q-70,c-at_max,w-1000,h-600",
         "gmaps_url": "https://www.google.com/maps/dir/?api=1&destination=18.761899053964935,98.91836751432969"
     },
     {
@@ -34,7 +34,7 @@ locations = [
         "lat": 18.807957541756373,
         "lon": 98.95168771880381,
         "description": "อ่างเก็บน้ำในมหาวิทยาลัยเชียงใหม่ พื้นที่สีเขียวสุดชิลล์ บรรยากาศโรแมนติกที่เหมาะกับการพักผ่อนยามเย็น",
-        "image_url": "https://images.unsplash.com/photo-1606132717834-318e95e8fc27?auto=format&fit=crop&q=80&w=800",
+        "image_url": "https://cdn.chiangmainews.co.th/wp-content/uploads/2024/09/24151909/1727165946_310558-chiangmainews.webp",
         "gmaps_url": "https://www.google.com/maps/dir/?api=1&destination=18.807957541756373,98.95168771880381"
     },
     {
@@ -42,7 +42,7 @@ locations = [
         "lat": 18.81144296067999,
         "lon": 98.9474780047453,
         "description": "แหล่งเรียนรู้และสัมผัสชีวิตสัตว์ป่านานาชนิด ท่ามกลางธรรมชาติที่ร่มรื่นบริเวณเชิงดอยสุเทพ",
-        "image_url": "https://images.unsplash.com/photo-1564750247657-3a133dfd5975?auto=format&fit=crop&q=80&w=800",
+        "image_url": "https://chiangmai.zoothailand.org/images/article/5555.jpg",
         "gmaps_url": "https://www.google.com/maps/dir/?api=1&destination=18.81144296067999,98.9474780047453"
     }
 ]
@@ -76,4 +76,4 @@ def index():
     return render_template('index.html', locations=locations, map_html=map_html)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0', port=5010)
