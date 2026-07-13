@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Tour Trip One Day | Chiang Mai</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0f172a;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --primary-glow: rgba(56, 189, 248, 0.4);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Kanit', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            min-height: 100vh;
+            background-image: radial-gradient(circle at 15% 50%, rgba(30, 58, 138, 0.15), transparent 25%),
+                              radial-gradient(circle at 85% 30%, rgba(15, 23, 42, 1), transparent 25%);
+        }
+
+        /* Editorial Header */
+        header {
+            text-align: center;
+            padding: 6rem 2rem 4rem;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+            background: linear-gradient(to right, #e2e8f0, #38bdf8);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            font-weight: 300;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Container & Grid Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .places-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        /* Glassmorphism Cards */
+        .place-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .place-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px var(--primary-glow);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .card-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        /* Neumorphic / Glassmorphic Button */
+        .btn-route {
+            display: inline-block;
+            text-align: center;
+            padding: 0.75rem 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 400;
+            border: 1px solid var(--glass-border);
+            box-shadow: inset 2px 2px 5px rgba(255, 255, 255, 0.05),
+                        inset -3px -3px 7px rgba(0, 0, 0, 0.5),
+                        5px 5px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.2s ease;
+        }
+
+        .btn-route:hover {
+            background: rgba(56, 189, 248, 0.15);
+            border-color: rgba(56, 189, 248, 0.4);
+            color: #38bdf8;
+            box-shadow: 0 0 15px var(--primary-glow);
+        }
+
+        /* Map Section */
+        .map-section {
+            padding: 2rem 0 6rem;
+        }
+
+        .map-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 1.5rem;
+            padding: 0 1rem;
+        }
+
+        .map-title {
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 60vh;
+            min-height: 500px;
+            border-radius: 24px;
+            overflow: hidden;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        /* Override folium iframe to remove default borders */
+        .map-container iframe {
+            border: none !important;
+            border-radius: 24px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .map-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Chiang Mai One Day Trip</h1>
+        <p>สัมผัสเสน่ห์เมืองเหนือ ผ่านเส้นทางที่ผสมผสานธรรมชาติ วัฒนธรรม และสถาปัตยกรรมที่ลงตัว</p>
+    </header>
+
+    <div class="container">
+        <!-- Places Grid -->
+        <div class="places-grid">
+            {% for loc in locations %}
+            <article class="place-card">
+                <img src="{{ loc.image_url }}" alt="{{ loc.name }}" class="card-image">
+                <div class="card-content">
+                    <h2 class="card-title">{{ loc.name }}</h2>
+                    <p class="card-desc">{{ loc.description }}</p>
+                    <a href="{{ loc.gmaps_url }}" target="_blank" class="btn-route">
+                        <svg style="width: 16px; height: 16px; display: inline-block; vertical-align: text-top; margin-right: 5px;" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        ข้อมูลเส้นทาง
+                    </a>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+
+        <!-- Interactive Map -->
+        <section class="map-section">
+            <div class="map-header">
+                <h2 class="map-title">Explore Route</h2>
+                <a href="https://www.google.com/maps/dir/?api=1&destination=18.81144296067999,98.9474780047453&waypoints=18.8186159,98.8922749|18.7885346,98.9926659|18.7618990,98.9183675|18.8079575,98.9516877" target="_blank" class="btn-route" style="background: rgba(56, 189, 248, 0.2); border-color: rgba(56, 189, 248, 0.5);">
+                    นำทางทั้งหมดผ่าน Google Maps
+                </a>
+            </div>
+            <div class="map-container">
+                {{ map_html | safe }}
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>
